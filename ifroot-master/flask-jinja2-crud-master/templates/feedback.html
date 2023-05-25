@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block conteudo %}
+    {% if mensagem != '' %}
+        <h2>{{mensagem}}</h2>
+    {% endif %}
+<form action="/feedbacks" method="POST">
+    <input type="text" name="mensagem">
+    <button><a class="btn-default">Enviar</a></button>
+</form>
+<br></br>
+<button class="btn-default"><a href="/">Voltar</a></button>
+{% endblock %}

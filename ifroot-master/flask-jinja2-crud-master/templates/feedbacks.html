@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block conteudo %}
+    {% if mensagem != '' %}
+        <h2>{{mensagem}}</h2>
+    {% endif %}
+<p>Feedback enviado, agradecemos.</p>
+<button class="btn-default"><a href="/">Voltar</a></button>
+{% endblock %}

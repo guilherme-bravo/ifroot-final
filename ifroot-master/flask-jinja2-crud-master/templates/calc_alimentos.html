@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">IFROOT</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Menu</a></li>
+        <li><a href="/produto">Lista de Produtos</a></li>
+        <li><a href="/feira">Lista Feira</a></li>
+        <li><a href="/feedback">Feedback</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+
+{% extends "base.html" %}
+{% block titulo %}Calculador de Macro{% endblock %}
+{% block js %}
+    function logout() {
+        document.getElementById("form_logout").submit();
+    }
+{% endblock %}
+{% block conteudo %}
+    {% if mensagem != '' %}
+        <h2>{{mensagem}}</h2>
+    {% endif %}
+
+    <h1>Calculador de Macros</h1>
+    <form action="/resultadoAlimentos" method="POST">
+        <p>Quantidade e nome da fruta (ingles)</p>
+        <input type="text" name="nomeFruta" id="nomeFruta">
+        <input type="submit" value="Enviar"></input>
+    </form>
+{% endblock %}
